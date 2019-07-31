@@ -3,7 +3,7 @@ import PhotoCard from '../PhotoCard';
 
 const ListOfPhotoCards = () => (
   <ul>
-      {[1, 2, 3].map(index => <li key={index}><PhotoCard /></li>)}
+      {[1, 2, 3, 4, 5, 6, 7].map(id => <PhotoCard key={id} id={id} />)}
   </ul>
 );
 

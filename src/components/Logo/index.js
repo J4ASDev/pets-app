@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 import { Svg } from './styles';
 
 const Logo = props => (

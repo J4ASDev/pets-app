@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react';
 import { GlobalStyle } from './styles/GlobalStyles';
 import Logo from './components/Logo';
-import ListOfCategory from './components/ListOfCategories';
+import ListOfCategories from './components/ListOfCategories';
 import ListOfPhotoCards from './components/ListOfPhotoCards';
 
 const App = () => {
@@ -9,10 +9,10 @@ const App = () => {
     <Fragment>
       <GlobalStyle />
       <Logo />
-      <ListOfCategory />
+      <ListOfCategories />
       <ListOfPhotoCards />
     </Fragment>
-  )
-}
+  );
+};
 
 export default App;

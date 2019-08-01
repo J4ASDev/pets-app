@@ -4,7 +4,7 @@
   "main": "index.js",
   "scripts": {
     "build": "webpack",
-    "dev": "webpack-dev-server",
+    "dev": "webpack-dev-server --history-api-fallback",
     "lint": "eslint src/"
   },
   "author": "Jonathan Araujo <j4asdev@gmail.com>",
@@ -23,8 +23,12 @@
     "webpack-dev-server": "^3.7.2"
   },
   "dependencies": {
+    "@reach/router": "^1.2.1",
+    "apollo-boost": "^0.4.3",
+    "graphql": "^14.4.2",
     "intersection-observer": "^0.7.0",
     "react": "^16.8.6",
+    "react-apollo": "^2.5.8",
     "react-dom": "^16.8.6",
     "react-icons": "^3.7.0",
     "styled-components": "^4.3.2"

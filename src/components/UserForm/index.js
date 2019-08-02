@@ -1,17 +1,28 @@
-import React from 'react';
+import React, { Fragment } from 'react';
+import { Title, Form, Input, Error } from './styles';
 import useInputValue from '../../hooks/useInputValue';
+import SubmitButton from '../SubmitButton';
 
-const UserForm = ({ onSubmit }) => {
+const UserForm = ({ error, disabled, onSubmit, title }) => {
   const email = useInputValue('');
   const password = useInputValue('');
-  
+
+  const handleSubmit = event => {
+    event.preventDefault();
+    onSubmit({ email: email.value, password: password.value });
+  };
+
   return (
-    <form onSubmit={onSubmit}>
-      <input placeholder='Email' {...email} />
-      <input placeholder='Password' type='password' {...password} />
-      <button>Iniciar sesion</button>
-    </form>
+    <Fragment>
+      <Form disabled={disabled} onSubmit={handleSubmit}>
+        <Title>{title}</Title>
+        <Input placeholder='Email' {...email} disabled={disabled} />
+        <Input placeholder='Password' type='password' {...password} disabled={disabled} />
+        <SubmitButton disabled={disabled}>{title}</SubmitButton>
+      </Form>
+      { error && <Error>{error}</Error> }
+    </Fragment>
   );
-}
+};
 
 export default UserForm;

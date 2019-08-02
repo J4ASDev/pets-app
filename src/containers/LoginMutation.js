@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Mutation } from 'react-apollo';
 import { gql } from 'apollo-boost';
 
@@ -14,6 +15,10 @@ const LoginMutation = ({ children }) => {
       {children}
     </Mutation>
   );
+};
+
+LoginMutation.propTypes = {
+  children: PropTypes.func
 };
 
 export default LoginMutation;

@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import PhotoCard from '../components/PhotoCard';
 
 import { gql } from 'apollo-boost';
@@ -30,5 +31,18 @@ const PhotoCardWithQuery = ({ id }) => (
   </Query>
 );
 
+PhotoCardWithQuery.propTypes = {
+  id: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.number
+  ])
+};
+
+renderProp.propTypes = {
+  loading: PropTypes.bool,
+  error: PropTypes.string,
+  data: PropTypes.object,
+  photo: PropTypes.array
+};
 
 export default PhotoCardWithQuery;

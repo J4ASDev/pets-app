@@ -1,5 +1,5 @@
 import React from 'react';
-
+import PropTypes from 'prop-types';
 import { Query } from 'react-apollo';
 import { gql } from 'apollo-boost';
 
@@ -32,5 +32,11 @@ export const FavsWithQuery = () => (
   </Query>
 );
 
-export default FavsWithQuery;
+renderProp.propTypes = {
+  loading: PropTypes.bool,
+  error: PropTypes.string,
+  data: PropTypes.object,
+  favs: PropTypes.array
+};
 
+export default FavsWithQuery;

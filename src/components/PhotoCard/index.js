@@ -1,5 +1,6 @@
 import React, { Fragment } from 'react';
 import { Article, ImageWrapper, Image } from './styles';
+import PropTypes from 'prop-types';
 import { Link } from '@reach/router';
 import useNearScreen from '../../hooks/useNearScreen';
 import FavButton from '../FavButton';
@@ -34,6 +35,16 @@ const PhotoCard = ({ id, liked, likes = 0, src = DEFAULT_IMAGE }) => {
       }
     </Article>
   );
+};
+
+PhotoCard.propTypes = {
+  id: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.number
+  ]),
+  liked: PropTypes.bool,
+  likes: PropTypes.number,
+  src: PropTypes.string
 };
 
 export default PhotoCard;
